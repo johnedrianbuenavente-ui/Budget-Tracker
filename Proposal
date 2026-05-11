@@ -41,7 +41,7 @@ Please enter amount: """))
     else:
         print("Invalid choice. Try again!")
         continue
-    print(f"""\n=====================
+    print("""\n=====================
      TOTAL BILL
 =====================\n""")    
 
