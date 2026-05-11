@@ -1,1 +1,13 @@
-
+print("Budget Tracker Program\n")
+bills = []
+total_spent = 0
+expenses = [
+      'Savings',
+      'Food',
+      'Electricity',
+      'Water',
+      'Transportation Expenses',
+      'Essential Clothing'
+      ]
+budget = int(input("\nEnter budget: "))
+real_budget = budget
