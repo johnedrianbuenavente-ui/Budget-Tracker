@@ -11,3 +11,9 @@ expenses = [
       ]
 budget = int(input("\nEnter budget: "))
 real_budget = budget
+while True:
+    print("\n----Payments----")
+    for index, item in enumerate(expenses):
+        print(f"|{index + 1}| {item}")
+       
+    choice = int(input("\nChoose a number: "))
