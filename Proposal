@@ -25,3 +25,17 @@ Please enter amount: """))
           real_budget -= bill_amount
           total_spent += bill_amount
           print(f"\nBudget remaining: {real_budget}")
+if real_budget < bill_amount:
+            print("Insufficient balance")
+            break
+       
+        conti = input("Do you want to continue (y/n): ").lower()
+        if conti == 'y':
+            continue
+        if conti == 'n':
+            break
+    elif choice == 0:
+        ("Finishing...\n")
+    else:
+        print("Invalid choice. Try again!")
+        continue
