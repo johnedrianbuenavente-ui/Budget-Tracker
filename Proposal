@@ -17,3 +17,11 @@ while True:
         print(f"|{index + 1}| {item}")
        
     choice = int(input("\nChoose a number: "))
+    if choice in [1,2,3,4,5,6]:
+          bill_amount = float(input(f"""-Paying {expenses[choice - 1]}
+Please enter amount: """))
+
+          bills.append((expenses[choice - 1], bill_amount))
+          real_budget -= bill_amount
+          total_spent += bill_amount
+          print(f"\nBudget remaining: {real_budget}")
