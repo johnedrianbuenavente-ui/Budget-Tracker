@@ -11,24 +11,26 @@ expenses = [
       ]
 budget = int(input("\nEnter budget: "))
 real_budget = budget
+
 while True:
+    
     print("\n----Payments----")
     for index, item in enumerate(expenses):
         print(f"|{index + 1}| {item}")
-       
+        
     choice = int(input("\nChoose a number: "))
     if choice in [1,2,3,4,5,6]:
-          bill_amount = float(input(f"""-Paying {expenses[choice - 1]}
+        bill_amount = float(input(f"""-Paying {expenses[choice - 1]}
 Please enter amount: """))
+        bills.append((expenses[choice - 1], bill_amount))
+        real_budget -= bill_amount
+        total_spent += bill_amount
+        print(f"\nBudget remaining: {real_budget}")
 
-          bills.append((expenses[choice - 1], bill_amount))
-          real_budget -= bill_amount
-          total_spent += bill_amount
-          print(f"\nBudget remaining: {real_budget}")
-if real_budget < bill_amount:
+        if real_budget < bill_amount:
             print("Insufficient balance")
             break
-       
+        
         conti = input("Do you want to continue (y/n): ").lower()
         if conti == 'y':
             continue
@@ -39,7 +41,7 @@ if real_budget < bill_amount:
     else:
         print("Invalid choice. Try again!")
         continue
-print(f"""\n=====================
+    print(f"""\n=====================
      TOTAL BILL
 =====================\n""")    
 
