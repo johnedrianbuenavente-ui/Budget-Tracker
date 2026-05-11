@@ -39,3 +39,14 @@ if real_budget < bill_amount:
     else:
         print("Invalid choice. Try again!")
         continue
+print(f"""\n=====================
+     TOTAL BILL
+=====================\n""")    
+
+for name, amount in bills:
+    print (f"{name:}: {amount: .2f}")
+print(f"Total Spent: {total_spent:.2f}")
+print(f"Remaining:   {real_budget:.2f}")
+
+print("""\n=====================
+Thank you, exiting...""")
