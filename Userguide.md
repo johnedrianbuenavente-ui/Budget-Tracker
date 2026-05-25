@@ -1,7 +1,7 @@
 
 User Guide for Budget Tracker
 
-Introduction
+**Introduction**
 
 The Budget Tracker Program is a Python-based terminal system designed to help users manage their personal budget and track their daily expenses easily.
 
