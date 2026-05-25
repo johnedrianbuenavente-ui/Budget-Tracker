@@ -1,4 +1,7 @@
-print("Budget Tracker Program\n")
+print(f"""{'=' * 48}
+        Budget Tracker Program\n
+{'=' * 48}""")
+
 bills = []
 total_spent = 0
 expenses = [
@@ -7,10 +10,36 @@ expenses = [
       'Electricity',
       'Water',
       'Transportation Expenses',
-      'Essential Clothing'
+      'Essential Clothing',
+      'Others...'
       ]
+months = [
+    'This month',
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+]
+
+name = input("Enter Name: ")
+
 budget = int(input("\nEnter budget: "))
 real_budget = budget
+
+for index, month in enumerate(months):
+    print(f"[{index}] {month}")
+
+pick_month = int(input("\nChoose month: "))
+
+
 
 while True:
     
@@ -21,7 +50,7 @@ while True:
         
     choice = int(input("\nChoose a number: "))
     
-    if choice in [1,2,3,4,5,6]:
+    if 1 <= choice <= 6:
         bill_amount = float(input(f"""-Paying {expenses[choice - 1]}
 Please enter amount: """))
         if bill_amount > 0:
@@ -40,20 +69,76 @@ Please enter amount: """))
         else:
             print("Not allowed, please try again.")
             continue
+    elif choice == 7:
+        others = input("Enter other expenses: ").title()    
+        bill_amount = float(input(f"""-Paying {others}
+Please enter amount: """))                                  
+        if bill_amount > 0:
+            if real_budget < bill_amount:
+                print("Insufficient balance")
+                break
+            bills.append((others, bill_amount))
+            real_budget -= bill_amount
+            total_spent += bill_amount
+            print(f"\nBudget remaining: {real_budget}")
+            conti = input("Do you want to continue (y/n): ").lower()
+            if conti == 'y':
+                continue
+            if conti == 'n':
+                break
+        else:
+            print("Not allowed, please try again.")
+            continue
     elif choice == 0:
-        ("Finishing...\n")
+        print("Finishing...\n")
     else:
         print("Invalid choice. Try again!")
         continue
     
-print("""\n=====================
-     TOTAL BILL
-=====================\n""")
+up = (f"""\n{'=' * 48}
+            TOTAL BILL
+{'=' * 48}\n""")
+print(up)
+def percent_bar(percent):
+    used = int(round(percent / 5))
+    remaining = 20 - used
+    return "|" + "*" * used + "-" * remaining + "|"
 
-for name, amount in bills:
-    print (f"{name:}: {amount: .2f}")
-print(f"Total Spent: {total_spent:.2f}")
-print(f"Remaining:   {real_budget:.2f}")
+for expensed, amount in bills:
+    percentage = (amount / budget) * 100
+    bar_chart = percent_bar(percentage)
+    print(f"{expensed:<18}: P{amount:>8.2f} {percentage:>5.1f}% {bar_chart}")
 
-print("""\n=====================
-Thank you, exiting...""")
+line = ("=" * 48)
+print(line)
+total_percentage = (total_spent / budget) * 100
+remaining_percentage = (real_budget / budget) * 100
+
+total_bar = percent_bar(total_percentage)
+remaining_bar = percent_bar(remaining_percentage)
+
+finish_1 = (f"{'Total Spent':<18}: P{total_spent:>8.2f} {total_percentage:>5.1f}% {total_bar}")
+finish_2 = (f"{'Remaining Budget':<18}: P{real_budget:8.2f} {remaining_percentage:>5.1f}% {remaining_bar}")
+print(finish_1)
+print(finish_2)
+print(f"""\n{'=' * 48}
+Thank you, exiting...
+{name}.txt file loaded""")
+
+
+
+
+filename = (f"{name}.txt")
+with open(filename, "w") as file:
+    file.write(up)
+    for expensed, amount in bills:
+        percentage = (amount / budget) * 100
+        bar_chart = percent_bar(percentage)
+        uzed = (f"{expensed:<18}: P{amount:>8.2f} {percentage:>5.1f}% {bar_chart}")
+        file.write(f"{uzed}\n")
+    file.write(f"{line}")
+    file.write(f"\n{finish_1}")
+    file.write(f"\n{finish_2}")
+    file.write(line)
+
+
