@@ -1,6 +1,7 @@
 print(f"""{'=' * 48}
-        Budget Tracker Program\n
-{'=' * 48}""")
+        Budget Tracker Program
+{'=' * 48}\n""")
+
 
 bills = []
 total_spent = 0
@@ -29,29 +30,36 @@ months = [
     'December'
 ]
 
-name = input("Enter Name: ")
 
+name = input("Enter Name: ")
+print(f"Loading profile for {name}!")
 budget = int(input("\nEnter budget: "))
 real_budget = budget
 
+
 for index, month in enumerate(months):
     print(f"[{index}] {month}")
+
 
 pick_month = int(input("\nChoose month: "))
 
 
 
+
+
+
 while True:
-    
+   
+
 
     print("\n=====Payments=====")
     for index, item in enumerate(expenses):
         print(f"|{index + 1}| {item}")
-        
+       
     choice = int(input("\nChoose a number: "))
-    
+   
     if 1 <= choice <= 6:
-        bill_amount = float(input(f"""-Paying {expenses[choice - 1]}
+        bill_amount = float(input(f"""-Allocating to {expenses[choice - 1]}
 Please enter amount: """))
         if bill_amount > 0:
             if real_budget < bill_amount:
@@ -94,7 +102,7 @@ Please enter amount: """))
     else:
         print("Invalid choice. Try again!")
         continue
-    
+   
 up = (f"""\n{'=' * 48}
             TOTAL BILL
 {'=' * 48}\n""")
@@ -103,19 +111,24 @@ def percent_bar(percent):
     used = int(round(percent / 5))
     remaining = 20 - used
     return "|" + "*" * used + "-" * remaining + "|"
-
+print(f"Name: {name}")
+print(f"Used budget for: {months[pick_month]}")
 for expensed, amount in bills:
     percentage = (amount / budget) * 100
     bar_chart = percent_bar(percentage)
-    print(f"{expensed:<18}: P{amount:>8.2f} {percentage:>5.1f}% {bar_chart}")
+    print(f"""{expensed:<18}: P{amount:>8.2f} {percentage:>5.1f}%
+                  {bar_chart}""")
+
 
 line = ("=" * 48)
 print(line)
 total_percentage = (total_spent / budget) * 100
 remaining_percentage = (real_budget / budget) * 100
 
+
 total_bar = percent_bar(total_percentage)
 remaining_bar = percent_bar(remaining_percentage)
+
 
 finish_1 = (f"{'Total Spent':<18}: P{total_spent:>8.2f} {total_percentage:>5.1f}% {total_bar}")
 finish_2 = (f"{'Remaining Budget':<18}: P{real_budget:8.2f} {remaining_percentage:>5.1f}% {remaining_bar}")
@@ -124,6 +137,10 @@ print(finish_2)
 print(f"""\n{'=' * 48}
 Thank you, exiting...
 {name}.txt file loaded""")
+
+
+
+
 
 
 
@@ -140,5 +157,8 @@ with open(filename, "w") as file:
     file.write(f"\n{finish_1}")
     file.write(f"\n{finish_2}")
     file.write(line)
+
+
+
 
 
