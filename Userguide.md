@@ -1,5 +1,4 @@
-
-User Guide for Budget Tracker
+<!-- User Guide for Budget Tracker
 
 **Introduction**
 
@@ -13,7 +12,7 @@ Prevents overspending
 Displays a summary of all expenses
 Generates a text file report of the user's transactions
 
-System Requirements
+**System Requirements**
 
 Before running the system, make sure you have:
 
@@ -24,7 +23,7 @@ Type on the terminal (python --version)
 How to run the program
 
 Save the file - Save the code using any filename with .py at the end
-Example: budge_tracker.py
+2. Example: budge_tracker.py
 2. Open terminal or command prompt - Navigate to the folder where the file is saved
 3. Run the program
 
@@ -198,15 +197,13 @@ Visual progress bar display
 Text file report generation
 Multiple expense category management
 
-Technologies Used
-Python
-Lists and Tuples
-Loops
-Conditional Statements
-Functions
-File Handling
+Developers
+Leopoldo Lasam
+Prince Jerickson Garcia
+John Edrian Buenavente
+Kyle Steven Cha
+John Brylle Azuela
 
 Conclusion
 
-The Budget Tracker Program helps users manage their expenses efficiently by automating budget calculations and expense tracking. It provides an easy and beginner-friendly way to monitor spending habits while practicing basic Python programming concepts.
-
+The Budget Tracker Program helps users manage their expenses efficiently by automating budget calculations and expense tracking. It provides an easy and beginner-friendly way to monitor spending habits while practicing basic Python programming concepts. -->
