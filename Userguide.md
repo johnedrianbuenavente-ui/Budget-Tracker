@@ -46,12 +46,8 @@ After entering the information, the system displays the available months.
 
 The system will display the month menu:
 
-[0] This month
-[1] January
-[2] February
-[3] March
-...
-[12] December
+<img width="633" height="280" alt="image" src="https://github.com/user-attachments/assets/41453274-2f39-4066-908f-6051d8332e15" />
+
 Choose a month by typing the corresponding number.
 
 Example; Choose month: 6 
@@ -61,14 +57,8 @@ Example; Choose month: 6
 
 After selecting a month, the system will display the payment categories.
 
-=====Payments=====
-|1| Savings
-|2| Food
-|3| Electricity
-|4| Water
-|5| Transportation Expenses
-|6| Essential Clothing
-|7| Others...
+<img width="625" height="180" alt="image" src="https://github.com/user-attachments/assets/642f8b12-31ea-45be-bba7-024502e397b3" />
+
 
 
 ## Subtitle Selecting an Expense Category
@@ -83,8 +73,8 @@ The system will then ask for the payment amount.
 
 Example:
 
--Paying Food
-Please enter amount: 500
+<img width="622" height="74" alt="image" src="https://github.com/user-attachments/assets/ce3b5bb6-5ded-4458-9399-fe3517ac53f3" />
+
 
 ## Subtitle Budget Validation
 
@@ -120,13 +110,9 @@ Percentage used
 Visual budget bar
 
 Example Output:
-================================================
-            TOTAL BILL
-================================================
 
-Food              : P  500.00   4.2% |*-------------------|
-Electricity       : P 1000.00   8.3% |**------------------|
-Transportation Expenses: P  700.00   5.8% |*-------------------|
+<img width="619" height="193" alt="image" src="https://github.com/user-attachments/assets/2e74c2a2-2176-4b39-ad54-18c814b28071" />
+
 
 ## Subtitle Total Budget Summary
 
@@ -137,9 +123,7 @@ Remaining Budget
 
 Example:
 
-================================================
-Total Spent       : P 2200.00  18.3% |****----------------|
-Remaining Budget  : P 9800.00  81.7% |****************----|
+<img width="611" height="129" alt="image" src="https://github.com/user-attachments/assets/0d8c75ba-c2c0-459e-a548-585b168a8430" />
 
 ## Subtitle Text File Generation
 
@@ -147,7 +131,8 @@ After the session ends, the program automatically creates a text file using the 
 
 Example:
 
-John.txt file loaded
+<img width="618" height="42" alt="image" src="https://github.com/user-attachments/assets/360aa6c3-2044-4d2a-9d1d-09f9542173e1" />
+
 
 The text file contains:
 
