@@ -1,4 +1,4 @@
-# Title User Guide for Budget Tracker
+# User Guide for Budget Tracker
 
 ## Subtitle Introduction
 
